@@ -1,0 +1,13 @@
+{
+    "name": "Waga Wake",
+    "description": "Japanese is hard",
+    "version": "1.0",
+    "manifest_version": 3,
+    "content_scripts": [{
+      "js": ["popup.js"],
+      "matches": ["<all_urls>"]
+    }],
+    "action": {
+      "default_popup": "home.html"
+    }
+  }
