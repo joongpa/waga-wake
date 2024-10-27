@@ -46,20 +46,23 @@ function button(answer) {
     button.style.backgroundColor = "grey"
     button.style.border = "none"
     button.style.borderRadius = "3px"
+    button.style.paddingRight = "2px"
+    button.style.paddingLeft = "2px"
     globalCounter++
     return button.outerHTML
 }
 
 chrome.runtime.onMessage.addListener(() => {
-    globalCounter = 0
     printTree(document.body)
-    
+
     for (let i = 0; i < globalCounter; i++) {
+        console.log(i)
         const id = "parti-" + i
         const button = document.getElementById(id)
         if (!button) continue
 
         button.onclick = e => {
+            console.log(i)
             e?.preventDefault()
             button.outerHTML = button.className
         }
